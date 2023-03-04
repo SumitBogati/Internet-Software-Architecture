@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b6483d0e20.js" crossorigin="anonymous"></script>
+</head>
+<!-- -----------------------------HomePage----------------------------- -->
+<body>
+    <div id="header">
+        <div class="container">
+            <nav class="bar">
+                <img src="img/Logo.png" width="65px" height="65px" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li> 
+                    <i class="fas fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+                <li class="search-icon">
+                    <input type="search" placeholder="Search">
+                <label class="icon">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </label>
+                </li>
+            </nav>
+            <div class="header-text">
+                <h1>Welcome <br> To BMW <span> NEPAL </span> </h1>
+                <p>Get The Ultimate Driving Experience!</p>
+            </div>
+        </div>
+    </div>
+<!-- ------------------------------About------------------------------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+        <div class="about-column-1">
+            <img src="img/intro.png" >
+        </div>
+        <div class="about-column-2">
+            <h1 class="sub-title">About</h1>
+            <p>Welcome to BMW, where performance, luxury, and innovation unite. For over 100 years, we've led the automotive industry with cutting-edge technology, stunning designs, and unparalleled driving experiences. Our commitment to sustainability drives us to explore new technologies like electric and autonomous driving, making driving smarter, safer, and more enjoyable. As a BMW owner, you'll join a global community of passionate drivers and gain access to maintenance tips, service schedules, and genuine BMW parts and accessories. Experience the thrill of the open road with BMW.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('technical skills')">SUV List</p>
+                    <p class="tab-links" onclick="opentab('skills')">Sedan List</p>
+                </div>   
+                <div class="tab-contents active-tab" id="technical skills">
+                    <ul>
+                        <li> BMW X1 </li>
+                        <li> BMW X2 </li>
+                        <li> BMW X3 </li>
+                        <li> BMW X4 </li>
+                        <li> BMW X5 </li>
+                        <li> BMW X6 </li>
+                        <li> BMW X7 </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills" >
+                    <ul>
+                        <li>BMW 2 Series</li>
+                        <li>BMW 3 Series</li>
+                        <li>BMW 4 Series</li>
+                        <li>BMW 5 Series</li>
+                        <li>BMW 6 Series</li>
+                        <li>BMW 7 Series</li>
+                    </ul>
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- -------------------------------Services------------------------------- -->
+
+<div id="Services">
+    <div class="container">
+        <div class="hero">
+        <h1 class="sub-title">Services</h1>
+    </div>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-toolbox"></i>
+                <h2> Maintenance Services </h2>
+                <p> This can include regular check-ups, oil changes, filter replacements, brake inspections, tire rotations, and other routine services to keep your BMW in top condition.</p>
+            </div>   
+            <div>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h2> Repair services </h2> <br> <br>
+                <p>This can include diagnostics and repairs for any issues with your BMW, from engine problems to electrical issues to body damage.</p>
+            </div>   
+            <div>
+                <i class="fa-solid fa-car"></i>
+                <h2> Performance upgrades </h2>
+                <p>BMW offers a range of performance upgrades to enhance your driving experience, such as suspension upgrades, brake upgrades, exhaust systems, and tuning software. These upgrades can be tailored to your specific BMW model and driving preferences.</p>
+            </div>   
+        </div>
+
+    </div>
+</div>
+
+<!-- -------------------------------------------------- contact --------------------------------------------------------- -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact</h1>
+                <p> <i class="fa-solid fa-envelope"></i> info@bmw-laxmi.com.np </p>
+                <p><i class="fa-solid fa-phone"></i> 01-4111776 </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/bmwnepalofficial" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bmwnepalofficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/BMW" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message"  rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p> COPYRIGHT @BMW NEPAL 2023 | ALL RIGHTS RESERVED </p>
+    </div>
+</div>
+
+<!-- ------------------------------js------------------------------ -->
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab (tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+
+</body>
+</html>
